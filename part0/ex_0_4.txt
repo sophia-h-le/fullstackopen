@@ -1,4 +1,9 @@
 browser-->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over server:
+server creates new note object and adds it to an array named notes
+end note
+
 server-->browser: URL Redirect
 browser-->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
 server-->browser: HTML-code
@@ -6,3 +11,14 @@ browser-->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
 server-->browser: main.css
 browser-->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
 server-->browser: main.js
+
+note over browser:
+browser begins to execute two last lines in main.js to request data.json from server
+end note
+
+browser-->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: data.json
+
+note over browser:
+browser executes event handler that render notes and image to display
+end note
