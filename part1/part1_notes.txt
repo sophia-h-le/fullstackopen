@@ -1,4 +1,7 @@
 Part 1
 React
 
+Ways to define functions in JavaScript
+
 JSX
+
