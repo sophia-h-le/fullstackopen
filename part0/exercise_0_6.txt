@@ -1,0 +1,8 @@
+note on browser:
+browser executes js-code to fetch the form-element then executes the event handler
+the event handler prevents default handling of form submit
+then creates a new note and adds it to the notes list
+then rerenders the notes list for display
+end note
+
+browser-->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
