@@ -1,0 +1,11 @@
+Part 0 
+
+Function vs Subroutine:
+function: focus on returning a value
+subroutine: focus on completing a specific task
+
+Event handler vs Callback: 
+event handler is a specific type of callback
+--> Types of Callback?
+
+Asynchronous:
