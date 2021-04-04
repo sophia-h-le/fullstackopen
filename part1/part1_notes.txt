@@ -20,4 +20,5 @@ functional programming
 
 destructuring assignment
 
-object literals
+Ways to define objects in JavaScript
+-object literals
