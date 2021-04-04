@@ -19,3 +19,5 @@ let vs var
 functional programming
 
 destructuring assignment
+
+object literals
