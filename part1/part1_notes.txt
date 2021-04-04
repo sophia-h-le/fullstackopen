@@ -6,3 +6,4 @@ Ways to define functions in JavaScript
 JSX
 
 Babel
+-Transpile
