@@ -5,5 +5,15 @@ Ways to define functions in JavaScript
 
 JSX
 
+JavaScript
+
 Babel
 -Transpile
+
+Node.js
+
+JS Bin
+
+let vs var
+
+functional programming
