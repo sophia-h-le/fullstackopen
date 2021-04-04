@@ -22,3 +22,4 @@ destructuring assignment
 
 Ways to define objects in JavaScript
 -object literals
+-constructor functions
