@@ -17,3 +17,5 @@ JS Bin
 let vs var
 
 functional programming
+
+destructuring assignment
