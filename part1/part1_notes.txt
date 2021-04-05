@@ -29,3 +29,6 @@ Functions
 -function expressions
 
 Object method
+https://egghead.io/courses/understand-javascript-s-this-keyword-in-depth
+
+Classes
