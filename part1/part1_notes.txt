@@ -32,3 +32,14 @@ Object method
 https://egghead.io/courses/understand-javascript-s-this-keyword-in-depth
 
 Classes
+-prototypal inheritance
+-https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
+-You Don't Know JS - book
+-https://javascript.info/
+
+
+Component state, Event handler
+-component helper functions
+-destructuring
+
+-state hook
