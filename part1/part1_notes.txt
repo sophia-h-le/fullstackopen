@@ -43,3 +43,5 @@ Component state, Event handler
 -destructuring
 
 -state hook
+
+-types of events supported by each element
