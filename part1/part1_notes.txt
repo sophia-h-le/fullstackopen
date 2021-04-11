@@ -49,3 +49,8 @@ Component state, Event handler
 -object spread syntax
 
 -conditional rendering
+
+
+Debugging
+-Keep the dev console open at all times
+  -The Console tab should be open in most of the situations
