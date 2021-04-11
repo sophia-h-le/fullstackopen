@@ -47,3 +47,5 @@ Component state, Event handler
 -types of events supported by each element
 
 -object spread syntax
+
+-conditional rendering
