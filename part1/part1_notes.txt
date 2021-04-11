@@ -55,3 +55,4 @@ Debugging
 -Keep the dev console open at all time
   -The Console tab should be open in most of the situations
 -Keep both the code and the web page open at the same time, all the time
+-Code a little, run, and fix errors immediately
