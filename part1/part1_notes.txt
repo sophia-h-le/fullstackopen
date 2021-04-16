@@ -58,3 +58,4 @@ Debugging
 -Code a little, run, and fix errors immediately
   -Print-based debugging is a good idea
   -Separate what you want to log to the console with a comma
+  -Pause the execution of your code with the debugger: type 'debugger' anywhere in your code in the console
