@@ -63,3 +63,6 @@ Debugging
     -the execution will stop once it reaches the debugger command
     -go to the console tab to inspect the current states of variables
     -once the bug is caught, and fixed, remove the 'debugger' command and refresh the page
+   -Pause the execution of the code by setting break point in the Sources tab
+    -inspect the values of variables in the Scope section
+    -React developer tools extension will add Components tab
