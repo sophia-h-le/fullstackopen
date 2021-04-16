@@ -66,3 +66,5 @@ Debugging
    -Pause the execution of the code by setting break point in the Sources tab
     -inspect the values of variables in the Scope section
     -React developer tools extension will add Components tab
+
+Rules of Hooks
