@@ -58,4 +58,8 @@ Debugging
 -Code a little, run, and fix errors immediately
   -Print-based debugging is a good idea
   -Separate what you want to log to the console with a comma
-  -Pause the execution of your code with the debugger: type 'debugger' anywhere in your code in the console
+  -Pause the execution of your code with the debugger: 
+    -type 'debugger' anywhere in your code in the console
+    -the execution will stop once it reaches the debugger command
+    -go to the console tab to inspect the current states of variables
+    -once the bug is caught, and fixed, remove the 'debugger' command and refresh the page
