@@ -72,3 +72,6 @@ The useState function, and useEffect function, must NOT be called from inside of
 aka they can ONLY be called inside a function body that defines a React component
 
 Event handler must always be a function or a reference to a function
+Often event handlers are defined in a separate place
+Event handlers can be composed of multiple commands, in which case we can use the CURLY BRACE SYNTAX for arrow function
+
