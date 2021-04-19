@@ -78,5 +78,5 @@ Event handlers can be composed of multiple commands, in which case we can use th
 Another way to define an event handler is to use a FUNCTION that RETURNS a FUNCTION
 Passing event handler to a child component
 
-Do NOT define component inside a component
+Do NOT define components within components
 
