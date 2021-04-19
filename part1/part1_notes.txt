@@ -70,3 +70,5 @@ Debugging
 Rules of Hooks
 The useState function, and useEffect function, must NOT be called from inside of a loop, a conditional expression, or any place that is NOT a function defining a component.
 aka they can ONLY be called inside a function body that defines a React component
+
+Event handler must always be a function or a reference to a function
