@@ -76,5 +76,7 @@ Often event handlers are defined in a separate place
 Event handlers can be composed of multiple commands, in which case we can use the CURLY BRACE SYNTAX for arrow functions
 
 Another way to define an event handler is to use a FUNCTION that RETURNS a FUNCTION
+Passing event handler to a child component
 
+Do NOT define component inside a component
 
