@@ -73,5 +73,8 @@ aka they can ONLY be called inside a function body that defines a React componen
 
 Event handler must always be a function or a reference to a function
 Often event handlers are defined in a separate place
-Event handlers can be composed of multiple commands, in which case we can use the CURLY BRACE SYNTAX for arrow function
+Event handlers can be composed of multiple commands, in which case we can use the CURLY BRACE SYNTAX for arrow functions
+
+Another way to define an event handler is to use a FUNCTION that RETURNS a FUNCTION
+
 
