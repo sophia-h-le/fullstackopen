@@ -1,0 +1,11 @@
+Functional programming
+
+Snippets in VS Code
+
+Functional Programming in JS
+
+Common practice is to declare each component in their own file as an ES6-module.
+
+In smaller applications, components are usually placed in a directory called components, which is in turn placed within the src directory. The convention is to name the file after the component.
+
+when importing our own components, their location must be given in relation to the importing file:
