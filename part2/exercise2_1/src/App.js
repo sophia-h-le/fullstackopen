@@ -56,7 +56,7 @@ const App = () => {
 
   return (
     <div>
-      <HeaderBig name={'Web debelopment curriculum'}/> 
+      <HeaderBig name={'Web development curriculum'}/> 
       <>
         {courses.map(course => 
           <Course key={course.id} course={course}/>
