@@ -3,7 +3,7 @@ console.log('Testting server, testing server...')
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
-const cors = requite('cors')
+const cors = require('cors')
 
 app.use(cors())
 
