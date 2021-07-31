@@ -17,26 +17,26 @@ const personSchema = new mongoose.Schema({
         type: String,
         required: true,
         minLength: 3,
-        // validate: {
-        //     isAsync: true,
-        //     validator: function(value, isValid) {
-        //         const self = this;
-        //         return self.constructor.findOne({ name: value })
-        //         .exec(function(err, user) {
-        //             if (err) {
-        //                 throw err
-        //             } else if (user) {
-        //                 if (self.id === user.id) {
-        //                     return isValid(true)
-        //                 }
-        //                 return isValid(false)
-        //             } else {
-        //                 return isValid(true)
-        //             }
-        //         })
-        //     },
-        //     message: 'This name is already taken'
-        // }
+        validate: {
+            isAsync: true,
+            validator: function(value, isValid) {
+                const self = this;
+                return self.constructor.findOne({ name: value })
+                .exec(function(err, user) {
+                    if (err) {
+                        throw err
+                    } else if (user) {
+                        if (self.id === user.id) {
+                            return isValid(true)
+                        }
+                        return isValid(false)
+                    } else {
+                        return isValid(true)
+                    }
+                })
+            },
+            message: 'This name is already taken'
+        }
     },
     number: {
         type: String,
