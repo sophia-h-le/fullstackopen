@@ -42,7 +42,7 @@ const tokenValidator = (request, response, next) => {
         return response.status(401).json({ error: 'missing token' })
     }
 
-    const decodedToken = jwt.verify(token, provess.env.SECRET)
+    const decodedToken = jwt.verify(token, process.env.SECRET)
     if (!decodedToken.id) {
         return response.status(401).json({ error: 'invalid token' })
     }
