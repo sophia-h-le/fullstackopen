@@ -14,15 +14,13 @@ const bodyParser = require('body-parser')
 const testingRouter = require('./controllers/testing')
 
 logger.info('connecting to', config.MONGODB_URI)
-
-mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
-    .then(() => {
-        logger.info('connected to MongoDB')
-    })
-    .catch((error) => {
-        logger.error('error connection to MongoDB', error.message)
-    })
-
+mongoose.connect(
+    config.MONGODB_URI,
+    async(error)=>{
+        if(error) throw error;
+        console.log(`connected to MongoDB app.js`)
+    }
+)
 morgan.token('body', function (request) { return JSON.stringify(request.body) })
 
 app.use(bodyParser.json())
@@ -30,6 +28,7 @@ app.use(cors())
 // app.use(express.static('build'))
 // app.use(express.json()) ??
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'))
+app.use(express.json())
 app.use(middleware.requestLogger)
 
 app.use('/api/blogs', blogsRouter)

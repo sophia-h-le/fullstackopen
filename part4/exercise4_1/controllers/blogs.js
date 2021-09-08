@@ -28,12 +28,7 @@ blogsRouter.post('/', async (request, response, next) => {
             comments: body.comments || [],
             user: user._id
         })
-    
-        // blog.save()
-        //     .then(savedBlog => {
-        //         response.status(201).json(savedBlog.toJSON())
-        //     })
-        //     .catch(error => next(error))
+
         try {
             const savedBlog = await blog.save()
             logger.info(`added ${blog.title} to the blog list`)
@@ -65,7 +60,6 @@ blogsRouter.delete('/:id', async (request, response, next) => {
     } else {
         return response.status(401).json({ error: 'Unauthorized' })
     }
-    
 })
 
 blogsRouter.put('/:id', async (request, response, next) => {

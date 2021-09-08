@@ -2,9 +2,9 @@ const logger = require('./logger')
 const jwt = require('jsonwebtoken')
 
 const requestLogger = (request, response, next) => {
-    logger.info('Method:', request.method)
-    logger.info('Path', request.path)
-    logger.info('Body', request.body)
+    logger.info('Method: ', request.method)
+    logger.info('Path: ', request.path)
+    logger.info('Body: ', request.body)
     logger.info('---')
     next()
 }
@@ -23,6 +23,7 @@ const errorHandler = (error, request, response, next) => {
     } else if (error.name === 'JsonWebTokenError') {
         return response.status(401).json({ error: 'invalid token' })
     }
+    logger.error(error.message)
     next(error)
 }
 
@@ -47,6 +48,7 @@ const tokenValidator = (request, response, next) => {
         return response.status(401).json({ error: 'invalid token' })
     }
     next()
+}
 
 module.exports = {
     requestLogger,
