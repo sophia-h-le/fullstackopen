@@ -2,6 +2,13 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 const Blog = (props) => {
+  const blogStyle = {
+    paddingTop: 10,
+    paddingLeft: 2,
+    border: 'solid',
+    borderWidth: 1,
+    marginBottom: 5
+  }
   const blog = props.blog
   const [blogObject, setBlogObject] = useState(blog)
   const [visible, setVisible] = useState(false)
@@ -27,7 +34,7 @@ const Blog = (props) => {
   }
 
   return (
-    <div className='blog'>
+    <div className='blog' style={blogStyle}>
       <div>
         {blog.title} - {blog.author} <button onClick={toggleVisibility}>{buttonLabel}</button>
       </div>

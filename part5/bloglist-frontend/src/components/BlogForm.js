@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import Blog from './Blog'
+// import Blog from './Blog'
 
 const BlogForm = ({ createBlog }) => {
     const [newTitle, setNewTitle] = useState('')

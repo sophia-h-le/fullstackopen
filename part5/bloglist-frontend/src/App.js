@@ -104,12 +104,12 @@ const App = () => {
     }
   }
 
-  const deleteBlog = async (blogToRemove) {
+  const deleteBlog = async (blogToRemove) => {
     try {
       if (window.confirm(`Delete ${blogToRemove.title} ?`)) {
         blogService.remove(blogToRemove.id)
         setSuccessMessage(`Blog titled ${blogToRemove.title} was successfully removed`)
-        setBlogs(allBlogs.filter(blog => blog.id !== blogToRemove.id))
+        setBlogs(blogs.filter(blog => blog.id !== blogToRemove.id))
 
         setErrorMessage(null)
         setTimeout(() => {
