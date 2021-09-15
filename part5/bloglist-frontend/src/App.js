@@ -7,7 +7,6 @@ import Togglable from './components/Togglable'
 import blogService from './services/blogs'
 import loginService from './services/login'
 
-
 const App = () => {
   const [blogs, setBlogs] = useState([]) //all blogs
   const [username, setUsername] = useState('')
@@ -39,13 +38,12 @@ const App = () => {
     event.preventDefault()
     try {
       const user = await loginService.login({
-        username, password,
+        username,
+        password,
       })
 
-      window.localStorage.setItem(
-        'loggedBlogAppUser', JSON.stringify(user)
-      )
-      
+      window.localStorage.setItem('loggedBlogAppUser', JSON.stringify(user))
+
       setUser(user)
       blogService.setToken(user.token)
       setUsername('')
@@ -69,9 +67,11 @@ const App = () => {
     try {
       blogFormRef.current.toggleVisibility()
       const createdBlog = await blogService.create(blogToAdd)
-      setSuccessMessage(`Blog titled ${blogToAdd.title} was successfully added`)
+      setSuccessMessage(
+        `Blog titled ${blogToAdd.title} was successfully added`
+      )
       setBlogs(blogs.concat(createdBlog))
-      
+
       setErrorMessage(null)
       setTimeout(() => {
         setSuccessMessage(null)
@@ -88,8 +88,12 @@ const App = () => {
   const updateBlog = async (blogToUpdate) => {
     try {
       const updatedBlog = await blogService.update(blogToUpdate)
-      setSuccessMessage(`Blog titled ${blogToUpdate.title} was successfully updated`)
-      setBlogs(blogs.map(blog => blog.id !== blogToUpdate.id ? blog : updatedBlog))
+      setSuccessMessage(
+        `Blog titled ${blogToUpdate.title} was successfully updated`
+      )
+      setBlogs(
+        blogs.map((blog) => (blog.id !== blogToUpdate.id ? blog : updatedBlog))
+      )
 
       setErrorMessage(null)
       setTimeout(() => {
@@ -108,8 +112,10 @@ const App = () => {
     try {
       if (window.confirm(`Delete ${blogToRemove.title} ?`)) {
         blogService.remove(blogToRemove.id)
-        setSuccessMessage(`Blog titled ${blogToRemove.title} was successfully removed`)
-        setBlogs(blogs.filter(blog => blog.id !== blogToRemove.id))
+        setSuccessMessage(
+          `Blog titled ${blogToRemove.title} was successfully removed`
+        )
+        setBlogs(blogs.filter((blog) => blog.id !== blogToRemove.id))
 
         setErrorMessage(null)
         setTimeout(() => {
@@ -121,7 +127,7 @@ const App = () => {
       setSuccessMessage(null)
       setTimeout(() => {
         setErrorMessage(null)
-      },3000)
+      }, 3000)
     }
   }
 
@@ -130,33 +136,40 @@ const App = () => {
   return (
     <div>
       <h2>blogs</h2>
-      <Notification errorMessage={errorMessage} successMessage={successMessage} />
+      <Notification
+        errorMessage={errorMessage}
+        successMessage={successMessage}
+      />
 
-      {user === null ?
+      {user === null ? (
         <LoginForm
           handleLogin={handleLogin}
           username={username}
           setUsername={setUsername}
           password={password}
           setPassword={setPassword}
-        /> :
+        />
+      ) : (
         <div>
-          <div>{user.name} logged in <button onClick={handleLogout} type='submit'>Logout</button></div>
-          <Togglable buttonLabel='Add New Blog' ref={blogFormRef}>
-            <BlogForm
-              createBlog={createBlog}
-            />
+          <div>
+            {user.name} logged in{' '}
+            <button onClick={handleLogout} type="submit">
+              Logout
+            </button>
+          </div>
+          <Togglable buttonLabel="Add New Blog" ref={blogFormRef}>
+            <BlogForm createBlog={createBlog} />
           </Togglable>
-          {blogs.sort(byLikesAsc).map(blog => 
-              <Blog
-                key={blog.id}
-                blog={blog}
-                updateBlog={updateBlog}
-                deleteBlog={deleteBlog}
-              />
-            )}
-        </div> 
-      }
+          {blogs.sort(byLikesAsc).map((blog) => (
+            <Blog
+              key={blog.id}
+              blog={blog}
+              updateBlog={updateBlog}
+              deleteBlog={deleteBlog}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }

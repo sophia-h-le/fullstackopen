@@ -7,11 +7,11 @@ let config
 const setToken = (newToken) => {
   token = `bearer ${newToken}`
   config = {
-    headers: { Authorization: token},
+    headers: { Authorization: token },
   }
 }
 
-const getAll = async() => {
+const getAll = async () => {
   // const request = axios.get(baseUrl)
   // return request.then(response => response.data)
   const response = await axios.get(baseUrl, config)
@@ -24,7 +24,11 @@ const create = async (newBlog) => {
 }
 
 const update = async (blogToUpdate) => {
-  const response = await axios.put(`${baseUrl}/${blogToUpdate.id}`, blogToUpdate, config)
+  const response = await axios.put(
+    `${baseUrl}/${blogToUpdate.id}`,
+    blogToUpdate,
+    config
+  )
   return response.data
 }
 

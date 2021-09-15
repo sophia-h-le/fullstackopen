@@ -7,12 +7,12 @@ const Blog = (props) => {
     paddingLeft: 2,
     border: 'solid',
     borderWidth: 1,
-    marginBottom: 5
+    marginBottom: 5,
   }
   const blog = props.blog
   const [blogObject, setBlogObject] = useState(blog)
   const [visible, setVisible] = useState(false)
-  const showWhenVisible = { display : visible ? '' : 'none'}
+  const showWhenVisible = { display: visible ? '' : 'none' }
 
   const toggleVisibility = () => {
     setVisible(!visible)
@@ -21,10 +21,10 @@ const Blog = (props) => {
   const buttonLabel = visible ? 'Hide' : 'View'
 
   const increaseLikes = () => {
-    const updatedBlog = ({
+    const updatedBlog = {
       ...blog,
-      likes: blog.likes + 1
-    })
+      likes: blog.likes + 1,
+    }
     props.updateBlog(updatedBlog)
     setBlogObject(updatedBlog)
   }
@@ -34,16 +34,22 @@ const Blog = (props) => {
   }
 
   return (
-    <div className='blog' style={blogStyle}>
+    <div className="blog" style={blogStyle}>
       <div>
-        {blog.title} - {blog.author} <button onClick={toggleVisibility}>{buttonLabel}</button>
+        {blog.title} - {blog.author}{' '}
+        <button onClick={toggleVisibility}>{buttonLabel}</button>
       </div>
-      <div style = {showWhenVisible}>
+      <div style={showWhenVisible}>
         <div>{blog.url}</div>
         <div>
-          {blogObject.likes} <button id='like-button' onClick={increaseLikes}>Like</button>
+          {blogObject.likes}{' '}
+          <button id="like-button" onClick={increaseLikes}>
+            Like
+          </button>
         </div>
-        <button id='remove-button' onClick={removeBlog}>Remove</button>
+        <button id="remove-button" onClick={removeBlog}>
+          Remove
+        </button>
       </div>
     </div>
   )
@@ -52,7 +58,7 @@ const Blog = (props) => {
 Blog.propTypes = {
   blog: PropTypes.object.isRequired,
   updateBlog: PropTypes.func.isRequired,
-  deleteBlog: PropTypes.func.isRequired
+  deleteBlog: PropTypes.func.isRequired,
 }
 
 export default Blog
