@@ -42,7 +42,7 @@ const Blog = (props) => {
       <div style={showWhenVisible}>
         <div>{blog.url}</div>
         <div>
-          {blogObject.likes}{' '}
+          { blogObject.likes }
           <button id="like-button" onClick={increaseLikes}>
             Like
           </button>
